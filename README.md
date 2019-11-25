@@ -42,14 +42,22 @@ There are several ways to use the library. To get all tiles that begin with
 ```
 To get all the tiles intersecting a given window:
 ```
->>> tiling.tm35.TM35Block.overlapping_blocks(350000,6966000,356000,6967000)
+>>> tiling.tm35.TM35Block.overlapping_blocks(350000, 6966000, 356000, 6967000)
 [P4113F4, P4113H2, P4113H4, P4114E3, P4114G1, P4114G3, P4131B2, P4132A1]
 ```
 To get a neighbor of a specific tile:
 ```
->>> t=tiling.tm35.TM35Block('N4411A1')
+>>> t = tiling.tm35.TM35Block('N4411A1')
 >>> t.left_neighbor()
 [N4233G3]
+```
+Get spatial information about a specific tile:
+```
+>>> t = tiling.tm35.TM35Block('N4411A1')
+>>> t.bounds()
+(404000.0, 6906000.0, 407000.0, 6909000.0)
+>>> t.string
+'N4411A1'
 ```
 
 ## Usage and Citing
