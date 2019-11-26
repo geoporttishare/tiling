@@ -24,7 +24,7 @@ source ${HOME}/myenv/bin/activate
 Now that we are inside the virtual environment, we can install the package.
 First we need to fetch it:
 ```
-git clone git@github.com:geoporttishare/tiling.git tiling.git
+git clone https://github.com/geoporttishare/tiling.git tiling.git
 cd tiling.git
 python setup.py install
 ```
