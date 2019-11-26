@@ -43,88 +43,71 @@ class TestTM35Block(unittest.TestCase):
 
     def test_left_neighbour_1(self):
         ret = TM35Block('L4').left_neighbor()
-        self.assertEqual(len(ret), 1)
-        self.assertEqual(ret[0].string, 'L3')
+        self.assertEqual(ret.string, 'L3')
 
     def test_left_neighbour_2(self):
         ret = TM35Block('N421').left_neighbor()
-        self.assertEqual(len(ret), 1)
-        self.assertEqual(ret[0].string, 'N343')
+        self.assertEqual(ret.string, 'N343')
 
     def test_left_neighbour_3(self):
         ret = TM35Block('Q5222A2').left_neighbor()
-        self.assertEqual(len(ret), 1)
-        self.assertEqual(ret[0].string, 'Q4444G4')
+        self.assertEqual(ret.string, 'Q4444G4')
 
     def test_top_neighbor_1(self):
         ret = TM35Block('L4').top_neighbor()
-        self.assertEqual(len(ret), 1)
-        self.assertEqual(ret[0].string, 'M4')
+        self.assertEqual(ret.string, 'M4')
 
     def test_top_neighbor_2(self):
         ret = TM35Block('N421').top_neighbor()
-        self.assertEqual(len(ret), 1)
-        self.assertEqual(ret[0].string, 'N422')
+        self.assertEqual(ret.string, 'N422')
 
     def test_top_neighbor_3(self):
         ret = TM35Block('Q5222A2').top_neighbor()
-        self.assertEqual(len(ret), 1)
-        self.assertEqual(ret[0].string, 'Q5222B1')
+        self.assertEqual(ret.string, 'Q5222B1')
 
     def test_bottom_neighbor_1(self):
         ret = TM35Block('L4').bottom_neighbor()
-        self.assertEqual(len(ret), 1)
-        self.assertEqual(ret[0].string, 'K4')
+        self.assertEqual(ret.string, 'K4')
 
     def test_bottom_neighbor_2(self):
         ret = TM35Block('N421').bottom_neighbor()
-        self.assertEqual(len(ret), 1)
-        self.assertEqual(ret[0].string, 'N412')
+        self.assertEqual(ret.string, 'N412')
 
     def test_bottom_neighbor_3(self):
         ret = TM35Block('Q5222A2').bottom_neighbor()
-        self.assertEqual(len(ret), 1)
-        self.assertEqual(ret[0].string, 'Q5222A1')
+        self.assertEqual(ret.string, 'Q5222A1')
 
     def test_top_left_neighbor_1(self):
         ret = TM35Block('L4').top_left_neighbor()
-        self.assertEqual(len(ret), 1)
-        self.assertEqual(ret[0].string, 'M3')
+        self.assertEqual(ret.string, 'M3')
 
     def test_top_left_neighbor_2(self):
         ret = TM35Block('Q5222A2').top_left_neighbor()
-        self.assertEqual(len(ret), 1)
-        self.assertEqual(ret[0].string, 'Q4444H3')
+        self.assertEqual(ret.string, 'Q4444H3')
 
     def test_top_right_neighbor_1(self):
         ret = TM35Block('L4').top_right_neighbor()
-        self.assertEqual(len(ret), 1)
-        self.assertEqual(ret[0].string, 'M5')
+        self.assertEqual(ret.string, 'M5')
 
     def test_top_right_neighbor_2(self):
         ret = TM35Block('Q5222A2').top_right_neighbor()
-        self.assertEqual(len(ret), 1)
-        self.assertEqual(ret[0].string, 'Q5222B3')
+        self.assertEqual(ret.string, 'Q5222B3')
 
     def test_bottom_left_neighbor_1(self):
         ret = TM35Block('L4').bottom_left_neighbor()
-        self.assertEqual(len(ret), 1)
-        self.assertEqual(ret[0].string, 'K3')
+        self.assertEqual(ret.string, 'K3')
 
     def test_bottom_left_neighbor_2(self):
         ret = TM35Block('Q5222A2').bottom_left_neighbor()
-        self.assertEqual(len(ret), 1)
-        self.assertEqual(ret[0].string, 'Q4444G3')
+        self.assertEqual(ret.string, 'Q4444G3')
 
     def test_bottom_right_neighbor_1(self):
         ret = TM35Block('L4').bottom_right_neighbor()
-        self.assertEqual(len(ret), 1)
-        self.assertEqual(ret[0].string, 'K5')
+        self.assertEqual(ret.string, 'K5')
 
     def test_bottom_right_neighbor_2(self):
         ret = TM35Block('Q5222A2').bottom_right_neighbor()
-        self.assertEqual(len(ret), 1)
-        self.assertEqual(ret[0].string, 'Q5222A3')
+        self.assertEqual(ret.string, 'Q5222A3')
 
     def test_overlapping_blocks_1(self):
         ret = TM35Block.overlapping_blocks(308657, 6762534, 308658, 6762535)

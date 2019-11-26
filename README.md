@@ -34,7 +34,7 @@ whenever you activate the environment.
 ## Usage
 
 There are several ways to use the library. To get all tiles that begin with
-'N3':
+'N4411':
 ```
 >>> import tiling.tm35
 >>> tiling.tm35.TM35Block.expand('N4411')
@@ -49,7 +49,7 @@ To get a neighbor of a specific tile:
 ```
 >>> t = tiling.tm35.TM35Block('N4411A1')
 >>> t.left_neighbor()
-[N4233G3]
+N4233G3
 ```
 Get spatial information about a specific tile:
 ```
