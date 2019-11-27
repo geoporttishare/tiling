@@ -133,7 +133,8 @@ class Block(object):
         level = len(self.string)
         cp = self.llcorner + 0.5 * self.dims
         lcp = cp + self.dims * np.array((dx, dy))
-        return self.overlapping_blocks(lcp[0], lcp[1], lcp[0], lcp[1], level)[0]
+        obs = self.overlapping_blocks(lcp[0], lcp[1], lcp[0], lcp[1], level)
+        return obs[0] if len(obs) > 0 else None
 
     def left_neighbor(self):
         """
@@ -189,10 +190,12 @@ class Block(object):
         """
         Return all the neighbor blocks.
         """
-        return [self.top_left_neighbor(), self.top_neighbor(),
-            self.top_right_neighbor(), self.left_neighbor(),
-            self.right_neighbor(), self.bottom_left_neighbor(),
-            self.bottom_neighbor(), self.bottom_right_neighbor()]
+        return [n for n in [
+                self.top_left_neighbor(), self.top_neighbor(),
+                self.top_right_neighbor(), self.left_neighbor(),
+                self.right_neighbor(), self.bottom_left_neighbor(),
+                self.bottom_neighbor(), self.bottom_right_neighbor()]
+            if n is not None]
 
     @classmethod
     def overlapping_blocks(cls, xmin, ymin, xmax, ymax, level=0):

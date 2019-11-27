@@ -259,6 +259,24 @@ class TestTM35Block(unittest.TestCase):
         self.assertEqual(len(r2), 1)
         self.assertNotEqual(r1[0], r2[0])
 
+    def test_no_overlapping_blocks(self):
+        ret = TM35Block.overlapping_blocks(0, 0, 1, 1)
+        self.assertEqual(len(ret), 0)
+
+    def test_no_left_neighbor(self):
+        ret = TM35Block('L2').left_neighbor()
+        self.assertTrue(ret is None)
+
+    def test_neighbors_missing(self):
+        ret = TM35Block('L2').neighbors()
+        labels = [b.string for b in ret]
+        self.assertEqual(len(ret), 5)
+        self.assertTrue('K2' in labels)
+        self.assertTrue('K3' in labels)
+        self.assertTrue('L3' in labels)
+        self.assertTrue('M2' in labels)
+        self.assertTrue('M3' in labels)
+
 
 if __name__ == '__main__':
     unittest.main()
