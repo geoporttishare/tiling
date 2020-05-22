@@ -25,12 +25,12 @@ class TM35Block(Block):
     base = (-76000.0, 6570000.0)
 
     # The size of the first-level tiling.
-    base_dims = np.array((4 * 192000, 13 * 96000))
+    base_dims = np.array((5 * 192000, 13 * 96000))
 
     # How the tiles are divided in each level.
     refinements = np.array((
         (1, 13),
-        (4, 1),
+        (5, 1),
         (2, 2),
         (2, 2),
         (2, 2),
